@@ -1,0 +1,45 @@
+int LED1 = 3;
+int LED2 = 6;
+
+int b; int c;
+void setup() {
+  Serial.begin(9600);
+  Serial.println("¿Cuantas veces quieres que encienda LEDA?");
+  delay(1000);
+  while (Serial.available() == 0) {
+  }
+  b = Serial.parseInt();
+  pinMode(LED1, OUTPUT);
+
+ 
+  
+  Serial.println("");
+  Serial.println("¿Cuantas veces quieres que encienda LEDB?");
+  delay(1000);
+  while (Serial.available() == 0) {
+  }
+  c = Serial.parseInt();
+  pinMode(LED2, OUTPUT);
+
+ 
+
+
+}
+
+void loop() {
+
+  for (int i = 0; i < b; i++)
+  { digitalWrite(LED1, HIGH);
+    delay(1000);
+    digitalWrite(LED1, LOW);
+    delay(1000);
+
+  }
+  for (int i = 0; i < c; i++)
+  {
+    digitalWrite(LED2, HIGH);
+    delay(1000);
+    digitalWrite(LED2, LOW);
+    delay(1000);
+  }
+}
